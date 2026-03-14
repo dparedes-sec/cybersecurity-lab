@@ -7,7 +7,7 @@ in this lab. Updated as findings are added.
 |---|----------|--------|--------|
 | A01 | Broken Access Control | ⬜ Pending | — |
 | A02 | Cryptographic Failures | ⬜ Pending | — |
-| A03 | Injection | ⬜ Pending | — |
+| A03 | Injection | ✅ Tested | [Report 01](reports/01-sql-injection/REPORT.md) |
 | A04 | Insecure Design | ⬜ Pending | — |
 | A05 | Security Misconfiguration | ⬜ Pending | — |
 | A06 | Vulnerable and Outdated Components | ⬜ Pending | — |

