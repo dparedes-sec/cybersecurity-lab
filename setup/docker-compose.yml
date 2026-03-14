@@ -1,0 +1,24 @@
+# Lab environment — intentionally vulnerable applications
+# Usage: docker-compose up -d
+
+services:
+  juiceshop:
+    image: bkimminich/juice-shop:v15.0.0
+    container_name: lab-juiceshop
+    ports:
+      - '3000:3000'
+    restart: unless-stopped
+
+  dvwa:
+    image: vulnerables/web-dvwa:latest
+    container_name: lab-dvwa
+    ports:
+      - '8080:80'
+    restart: unless-stopped
+
+  webgoat:
+    image: webgoat/webgoat:latest
+    container_name: lab-webgoat
+    ports:
+      - '8888:8080'
+    restart: unless-stopped
