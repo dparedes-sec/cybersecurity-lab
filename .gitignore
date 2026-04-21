@@ -10,17 +10,19 @@ credentials*
 # --- Capturas con datos reales ---
 evidence/real/
 evidence/production/
+evidence/temp/
 
 # --- Outputs de herramientas ---
 *.xml
+*.json
 burp-state*
 *.burp
 zap-session/
 .zaproxy/
+zap-report*
 
 # --- sqlmap output ---
-sqlmap-output/
-sqlmap_files/
+sqlmap_output/
 
 # --- Metasploit ---
 .msf4/
@@ -39,6 +41,8 @@ __pycache__/
 *.py[cod]
 .venv/
 venv/
+.pytest_cache/
+htmlcov/
 
 # --- Node.js ---
 node_modules/
@@ -50,6 +54,6 @@ desktop.ini
 *~
 
 # --- IDEs ---
-.vscode/settings.json
+.vscode/
 .idea/
 *.swp
