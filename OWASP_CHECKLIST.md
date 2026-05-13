@@ -3,9 +3,9 @@
 Tracks which OWASP Top 10 categories have been tested and documented
 in this lab. Updated as findings are added.
 
-| # | Category | Status | Report |
-|---|----------|--------|--------|
-| A01 | Broken Access Control | ⬜ Pending | — |
+| # | Category | Status | Evidence |
+|---|----------|--------|----------|
+| A01 | Broken Access Control | ✅ Tested | [Report 03](reports/03-broken-access-control/REPORT.md) |
 | A02 | Cryptographic Failures | ⬜ Pending | — |
 | A03 | Injection | ✅ Tested | [SQLi](reports/01-sql-injection/REPORT.md) / [XSS](reports/02-xss-reflected/REPORT.md) |
 | A04 | Insecure Design | ⬜ Pending | — |
